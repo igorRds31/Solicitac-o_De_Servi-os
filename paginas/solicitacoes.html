@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo"><a href="index.html"><img src="../img/png.logo.png" alt="Logo"></a></div>
+        <nav>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a class="pagina_inicial" href="index.html">Voltar pra página inicial</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="solicitacoes-container" class="container">
+            <h2>Minhas Solicitações</h2>
+            <div id="solicitacoes-lista"></div>
+        </section>
+    </main>
+
+    <!-- Adiciona SweetAlert2 antes do main.js -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="main.js"></script>
+    
+    <!-- Mobile Navigation Script -->
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    </script>
+
+    <footer></footer>
+</body>
+
+</html>
